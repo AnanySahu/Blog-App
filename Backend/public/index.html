@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog App</title>
+  <link rel="stylesheet" href="/css/poststyle.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Welcome To Reading  Blogs </h1>
+
+  <div id="dashboard">
+    <div class="dashboard-header">
+      <h2>Welcome, <span id="user-name"></span></h2>
+      <button onclick="logout()" class="logout-btn">Logout</button>
+    </div>
+
+    <div class="create-post-section">
+      <h3>Create New Post</h3>
+      <input id="post-title" type="text" placeholder="Post Title">
+      <textarea id="post-content" placeholder="Write your post content here..."></textarea>
+      <input type="file" id="post-image">
+      <button onclick="createPost()" class="publish-btn">📝 Publish Post</button>
+    </div>
+  </div>
+
+  <div class="posts-header">
+    <h3>All Posts</h3>
+    <span class="post-count" id="post-count">Loading posts...</span>
+  </div>
+  <div id="posts"></div>
+</div>
+
+<script src="/js/app.js"></script>
+
+</body>
+</html>
