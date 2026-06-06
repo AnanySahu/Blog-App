@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5000/api";
+const BASE_URL = "https://blog-app-fid9.onrender.com";
 
 let currentPage = 1;
 

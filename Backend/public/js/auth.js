@@ -1,4 +1,5 @@
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://blog-app-fid9.onrender.com";
+
 
 // REGISTER
 async function register() {
