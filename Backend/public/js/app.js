@@ -22,7 +22,7 @@ function showDashboard() {
 // ---------------- POSTS ----------------
 
 async function loadPosts(page = 1) {
-  const res = await fetch(`${BASE_URL}/posts?page=${page}&limit=5`);
+  const res = await fetch(`${BASE_URL}/api/posts?page=${page}&limit=5`);
   const data = await res.json();
 
   currentPage = data.page;
@@ -135,7 +135,7 @@ async function createPost() {
   const token = localStorage.getItem("token");
 
   try {
-    await fetch(`${BASE_URL}/posts`, {
+    await fetch(`${BASE_URL}/api/posts`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
       body: formData
@@ -159,7 +159,7 @@ async function likePost(postId) {
   const token = localStorage.getItem("token");
 
   try {
-    await fetch(`${BASE_URL}/posts/${postId}/like`, {
+    await fetch(`${BASE_URL}/api/posts/${postId}/like`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` }
     });
@@ -174,7 +174,7 @@ async function likePost(postId) {
 
 async function loadComments(postId) {
   try {
-    const res = await fetch(`${BASE_URL}/posts/${postId}/comments`);
+    const res = await fetch(`${BASE_URL}/api/posts/${postId}/comments`);
     const comments = await res.json();
 
     const container = document.getElementById(`comments-${postId}`);
@@ -213,7 +213,7 @@ async function addComment(postId) {
   const token = localStorage.getItem("token");
 
   try {
-    await fetch(`${BASE_URL}/posts/${postId}/comment`, {
+    await fetch(`${BASE_URL}/api/posts/${postId}/comment`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
