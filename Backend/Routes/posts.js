@@ -17,7 +17,7 @@ router.post("/", authMiddleware, upload.single("coverImage"), async (req, res) =
       return res.status(400).json({ message: "All fields required" });
     }
 
-   const BASE_URL = "http://localhost:5000";
+   const BASE_URL = "https://blog-app-fid9.onrender.com";
 
 const post = await Post.create({
   title,
@@ -44,7 +44,7 @@ res.status(201).json(postObj);
 router.get("/", async (req, res) => {
   try {
 
-    const BASE_URL = "http://localhost:5000";
+    const BASE_URL = "https://blog-app-fid9.onrender.com";
 
     // 🧠 Get query params
     const page = parseInt(req.query.page) || 1;
